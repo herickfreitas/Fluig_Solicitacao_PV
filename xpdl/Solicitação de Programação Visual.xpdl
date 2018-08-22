@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Fluig BPMN Modeler</Vendor>
+    <Created>Mon Aug 13 18:23:06 BRT 2018</Created>
+  </PackageHeader>
+  <RedefinableHeader>
+    <Version>36</Version>
+  </RedefinableHeader>
+  <ExternalPackages/>
+  <Participants>
+    <Participant Name="herickfreitas" Id="e7058ae5-dba6-70f6-2fff-5fd6cb787da1">
+      <ParticipantType Type="RESOURCE"/>
+      <Description>Usuário</Description>
+    </Participant>
+    <Participant Name="Internos" Id="fd8acb97-a4e2-42cb-c601-df8ff10c7acd">
+      <ParticipantType Type="RESOURCE_SET"/>
+      <Description>Grupo</Description>
+    </Participant>
+  </Participants>
+  <DataStores/>
+  <Pools/>
+  <Associations>
+    <Association Id="9714a031-9eb0-f0f3-4e10-b3859d69ed73" Name="" Source="39b11e59-b667-e95a-061d-eeb4cab18868" Target="770c9381-9e28-bbc3-c536-697985d3cf11">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo>
+          <Coordinates XCoordinate="120.0" YCoordinate="55.0"/>
+          <Coordinates XCoordinate="95.0" YCoordinate="67.0"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+    <Association Id="fd1497ff-a178-70c3-33be-abbd21be0ca9" Name="" Source="d92b9623-898e-5735-ea06-55a58b1bb2e3" Target="db8ec8a9-18c8-21d1-4f61-12dd5bf9b47d">
+      <ConnectorGraphicsInfos>
+        <ConnectorGraphicsInfo>
+          <Coordinates XCoordinate="460.0" YCoordinate="170.0"/>
+          <Coordinates XCoordinate="446.0" YCoordinate="232.0"/>
+        </ConnectorGraphicsInfo>
+      </ConnectorGraphicsInfos>
+    </Association>
+  </Associations>
+  <Artifacts>
+    <Artifact Id="39b11e59-b667-e95a-061d-eeb4cab18868" TextAnnotation="Processo será iniciado com o preenchimento do formulário" ArtifactType="Annotation">
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo Height="63.0" Width="191.0">
+          <Coordinates XCoordinate="120.0" YCoordinate="24.0"/>
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Artifact>
+    <Artifact Id="d92b9623-898e-5735-ea06-55a58b1bb2e3" TextAnnotation="Sempre será acionada. Demais serão acionadas conforme o preenchimento do formulário." ArtifactType="Annotation">
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo Height="81.0" Width="191.0">
+          <Coordinates XCoordinate="460.0" YCoordinate="130.0"/>
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Artifact>
+  </Artifacts>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="SolicitaçãodeProgramaçãoVisual" Name="Solicitação de Programação Visual">
+      <ProcessHeader>
+        <Created>Mon Aug 13 18:23:06 BRT 2018</Created>
+      </ProcessHeader>
+      <RedefinableHeader/>
+      <ActivitySets/>
+      <Activities>
+        <Activity Id="770c9381-9e28-bbc3-c536-697985d3cf11" Name="Início">
+          <Event>
+            <StartEvent Trigger="None"/>
+          </Event>
+          <Performers>
+            <Performer>fd8acb97-a4e2-42cb-c601-df8ff10c7acd</Performer>
+          </Performers>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="60.0" YCoordinate="50.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="931e604-c0ce-f554-9f8c-4389f5c63c41" Name="Solicitação Programação Visual - Finalizada">
+          <Event>
+            <EndEvent Result="None"/>
+          </Event>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="870.0" YCoordinate="44.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="9e8ff9e1-960e-d6c9-ccc7-d5076952d126" Name="Análisar Comunicação Externa">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <Performers>
+            <Performer>e7058ae5-dba6-70f6-2fff-5fd6cb787da1</Performer>
+          </Performers>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="84.0" Width="106.0">
+              <Coordinates XCoordinate="340.0" YCoordinate="420.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="c68fbeb8-2b60-5c0c-408e-545af06d84ef" Name="Análise Comunicação Interna">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="84.0" Width="106.0">
+              <Coordinates XCoordinate="340.0" YCoordinate="310.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="db8ec8a9-18c8-21d1-4f61-12dd5bf9b47d" Name="Analise Programação Visual">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="84.0" Width="106.0">
+              <Coordinates XCoordinate="340.0" YCoordinate="190.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="475fd5b4-1e26-03a2-825c-2b66cd3a6dde" Name="Join">
+          <Route/>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="88.0" Width="60.0">
+              <Coordinates XCoordinate="770.0" YCoordinate="310.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="f945ff71-b634-5770-abbc-6a47e5508dba" Name="Evento Inclusivo">
+          <Route GatewayType="Inclusive"/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="FLUIG_conditions" Value="&lt;list>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>1&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;quot;trabalho&amp;quot;) != &amp;apos; &amp;apos;&lt;/expression>
+    &lt;targetTask>db8ec8a9-18c8-21d1-4f61-12dd5bf9b47d&lt;/targetTask>
+    &lt;mechanism>Pool Grupo&lt;/mechanism>
+    &lt;mecanismoAtribuicaoConfiguracao class=&quot;org.eclipse.bpmn2.impl.AssignmentControllerPoolGroup&quot;>
+      &lt;groupId>G_ASCOM_PV&lt;/groupId>
+      &lt;mechanismName>Pool Grupo&lt;/mechanismName>
+    &lt;/mecanismoAtribuicaoConfiguracao>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>2&lt;/order>
+    &lt;expression>interno = true&lt;/expression>
+    &lt;targetTask>c68fbeb8-2b60-5c0c-408e-545af06d84ef&lt;/targetTask>
+    &lt;mechanism>Pool Grupo&lt;/mechanism>
+    &lt;mecanismoAtribuicaoConfiguracao class=&quot;org.eclipse.bpmn2.impl.AssignmentControllerPoolGroup&quot;>
+      &lt;groupId>G_ASCOM_CI&lt;/groupId>
+      &lt;mechanismName>Pool Grupo&lt;/mechanismName>
+    &lt;/mecanismoAtribuicaoConfiguracao>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>3&lt;/order>
+    &lt;expression>externo = true	&lt;/expression>
+    &lt;targetTask>9e8ff9e1-960e-d6c9-ccc7-d5076952d126&lt;/targetTask>
+    &lt;mechanism>Pool Grupo&lt;/mechanism>
+    &lt;mecanismoAtribuicaoConfiguracao class=&quot;org.eclipse.bpmn2.impl.AssignmentControllerPoolGroup&quot;>
+      &lt;groupId>G_ASCOM_CE&lt;/groupId>
+      &lt;mechanismName>Pool Grupo&lt;/mechanismName>
+    &lt;/mecanismoAtribuicaoConfiguracao>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+&lt;/list>"/>
+          </ExtendedAttributes>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="102.0" Width="60.0">
+              <Coordinates XCoordinate="110.0" YCoordinate="300.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <DataObjects/>
+      <DataInputOutputs/>
+      <DataStoreReferences/>
+      <Transitions>
+        <Transition Id="12524e51-104a-0497-e5e0-bd32921345c4" Name="" From="770c9381-9e28-bbc3-c536-697985d3cf11" To="f945ff71-b634-5770-abbc-6a47e5508dba">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="77.0" YCoordinate="85.0"/>
+              <Coordinates XCoordinate="76.0" YCoordinate="348.0"/>
+              <Coordinates XCoordinate="110.0" YCoordinate="351.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="3b0a4ee2-2de8-ae1a-8c5f-bbb13e4feb67" Name="" From="f945ff71-b634-5770-abbc-6a47e5508dba" To="db8ec8a9-18c8-21d1-4f61-12dd5bf9b47d">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="140.0" YCoordinate="300.0"/>
+              <Coordinates XCoordinate="136.0" YCoordinate="229.0"/>
+              <Coordinates XCoordinate="340.0" YCoordinate="232.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="51ce05bf-bfe9-96d8-aa8f-f4f60b065621" Name="" From="f945ff71-b634-5770-abbc-6a47e5508dba" To="c68fbeb8-2b60-5c0c-408e-545af06d84ef">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="170.0" YCoordinate="351.0"/>
+              <Coordinates XCoordinate="340.0" YCoordinate="352.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="56b0eca2-97b8-9371-52ff-e742d9ae991e" Name="" From="f945ff71-b634-5770-abbc-6a47e5508dba" To="9e8ff9e1-960e-d6c9-ccc7-d5076952d126">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="140.0" YCoordinate="402.0"/>
+              <Coordinates XCoordinate="136.0" YCoordinate="460.0"/>
+              <Coordinates XCoordinate="340.0" YCoordinate="462.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="188c7e49-93f4-8120-cb80-246d3af71f24" Name="" From="db8ec8a9-18c8-21d1-4f61-12dd5bf9b47d" To="475fd5b4-1e26-03a2-825c-2b66cd3a6dde">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="446.0" YCoordinate="232.0"/>
+              <Coordinates XCoordinate="796.0" YCoordinate="230.0"/>
+              <Coordinates XCoordinate="800.0" YCoordinate="310.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="66287722-c881-5bee-51be-5c95157c9deb" Name="" From="c68fbeb8-2b60-5c0c-408e-545af06d84ef" To="475fd5b4-1e26-03a2-825c-2b66cd3a6dde">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="446.0" YCoordinate="352.0"/>
+              <Coordinates XCoordinate="770.0" YCoordinate="354.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="c54fa39c-6627-f921-6fa1-706c8ab45513" Name="" From="9e8ff9e1-960e-d6c9-ccc7-d5076952d126" To="475fd5b4-1e26-03a2-825c-2b66cd3a6dde">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="446.0" YCoordinate="462.0"/>
+              <Coordinates XCoordinate="803.0" YCoordinate="461.0"/>
+              <Coordinates XCoordinate="800.0" YCoordinate="398.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="e23a29c1-97fb-d96c-9e42-5c9b288bae80" Name="" From="475fd5b4-1e26-03a2-825c-2b66cd3a6dde" To="931e604-c0ce-f554-9f8c-4389f5c63c41">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="830.0" YCoordinate="354.0"/>
+              <Coordinates XCoordinate="885.0" YCoordinate="352.0"/>
+              <Coordinates XCoordinate="887.0" YCoordinate="79.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <ExtendedAttributes>
+        <ExtendedAttribute Name="FLUIG_category" Value="ASCOM.Solicitações"/>
+        <ExtendedAttribute Name="FLUIG_cardIndex" Value="409 - Solicitação de Trabalho PV"/>
+        <ExtendedAttribute Name="FLUIG_formSource" Value="local"/>
+      </ExtendedAttributes>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+  <ExtendedAttributes/>
+</Package>

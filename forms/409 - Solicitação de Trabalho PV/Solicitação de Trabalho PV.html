@@ -1,0 +1,162 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+
+<!--	Comentários   -->
+	<div class="panel panel-primary" id="form">
+		<div class="panel-heading">
+			<h3 class="panel-title"><span class="fluigicon fluigicon-file fluigicon-md"></span> Solicitação de Trabalho PV</h3>
+		</div>
+		<div class="panel-body">
+
+			<div class="hidden" id="usuario_div"> <!--  class="hidden" Oculta a DIV -->
+				<div class="col-md-7">	
+					<label for="nome_solicitante">Responsável pelo preenchimento </label>
+					<input type="text" name="nome_solicitante" class="form-control"  id="nome_solicitante" disabled> <br> <br> 
+				</div>
+				<div class="col-md-3">	
+					<label for="user_solicitante">Usuário </label>
+					<input type="text" name="user_solicitante" class="form-control"  id="user_solicitante" disabled> <br> <br> 
+				</div>
+				<div class="col-md-2">	
+					<label for="data_preenchimento">Data do preenchimento </label>
+					<input type="text" name="data_preenchimento" class="form-control"  id="data_preenchimento" disabled> <br> <br> 
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">	
+					<label for="trabalho">Trabalho * </label>
+					<input type="text" name="trabalho" class="form-control"  id="trabalho"> <br> <br> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-9">
+				<label for="necessidades">Necessidades de divulgação</label>
+					<div class="checkbox">
+		    			<label> <input type="checkbox" name="interno" value="sim" > Será uma campanha ou precisará de uma comunicação para divulgar para o público interno? 	</label>
+						<label> <input type="checkbox" name="externo" value="sim" >	Pode ter avaliação de divulgação para o público externo a CNC (Imprensa, Federações, Sindicados, etc..)	</label> <br> <br> 
+					</div>
+				</div>
+			</div>
+ 			<div class="row">
+				<div class="col-md-12">
+				<label for="descricao"> Descrição * </label>
+					<textarea class="form-control" name="descricao" rows="3"></textarea> <br> <br> 
+				</div>
+			</div>	
+			
+			<div class="row">
+				<div class="col-md-6">	
+				<label for="solicitante">Solicitante * </label>
+                                 <input
+                                    type="zoom" 
+                                    id = "solicitante"
+                                    name="solicitante"
+                                    data-zoom="{
+										'displayKey':'COLABORADOR',
+										'datasetId':'ds_SQL_FluigFuncCusto',
+										'fields':[
+											{
+												'field':'COLABORADOR',
+												'label':'Colaborador'
+											},{
+												'field':'CODUSUARIO',
+												'label':'Cod. Usuário',
+												'standard':'true'
+											},{
+												'field':'EMAIL',
+												'label':'Email'
+											}
+										]
+                                    }"  /> 
+				</div>	
+				<div class="col-md-6">	
+				<label for="ccusto">Centro de custo * </label>
+                                 <input
+                                    type="zoom" 
+                                    id = "ccusto"
+                                    name="ccusto"
+                                    data-zoom="{
+										'displayKey':'CCUSTO_NOME',
+										'datasetId':'ds_SQL_FluigFuncCusto',
+										'fields':[
+											{
+												'field':'CCUSTO_COD',
+												'label':'Cod. Centro de Custo'
+											},{
+												'field':'CCUSTO_NOME',
+												'label':'Nome Centro de Custo',
+												'standard':'true'
+											}
+										]
+                                    }"  /> 
+				</div>	
+		</div>	<br> <br>  				
+								
+			<div class="row" name="materiais">
+				<div class="col-md-12">	
+					<label for="materiais">Materiais</label> <br>
+					<input type="checkbox" name="livro" id="livro"> Livro <br>
+					<input type="checkbox" name="livreto" id="livreto"> Livreto ( manual, apostila ou revistinha ) <br>
+					<input type="checkbox" name="manutencao" id="manutencao"> Manutenção de trabalhos existentes ou periódicos <br>
+					<input type="checkbox" name="papelaria" id="papelaria"> Papelaria ( cartão, envelope, cracha, etc... ) <br>
+					<input type="checkbox" name="animacao" id="animacao"> Animação ( flash ou vídeo ) <br>
+					<input type="checkbox" name="site" id="site"> Site ( hotsite ou sistema web ) <br>
+					<input type="checkbox" name="apresentacao" id="apresentacao"> Apresentação ( flash ou powerpoint ) <br>
+					<input type="checkbox" name="ilustracao" id="ilustracao"> Ilustração <br>
+					<input type="checkbox" name="eventos" id="eventos"> Eventos ( stand, cartaz ou sinalização ) <br>
+					<input type="checkbox" name="sinalizacao" id="sinalizacao"> Sinalização ( criação de elementos gráficos tridimensionais... ) <br>
+					<input type="checkbox" name="fotografia" id="fotografia"> Fotografia ( eventos, chegada de funcionários, etc... ) <br>
+					<input type="checkbox" name="folder" id="folder"> Folder <br>
+					<input type="checkbox" name="outros" id="outros"> Outros ( adesivos, etiquetas, cartões variados, elementos de decoração, etc... ) <br>
+					<input type="checkbox" name="outras" id="outras"> Outras solicitações ( digitais ou impressas ) <br> <br> 
+				</div>
+			</div> 			
+				<div class="col-md-2">
+				<label for="revisao">Precisará de revisão?</label>
+					<div class="radio">
+		    			<label> <input type="radio" name="radioRevisao" id="revisaoSim" value="sim"> 			Sim 		</label>
+						<label> <input type="radio" name="radioRevisao" id="revisaoNao" value="nao" checked>	Não 		</label> <br> <br> 
+		    		</div>
+				</div>
+	 			<div class="row">
+					<div class="col-md-12">
+					<label for="publicoalvo"> Público alvo * </label>
+						<textarea class="form-control" name="publicoalvo" id="publicoalvo" rows="3" ></textarea> <br> <br> 
+					</div>
+				</div>	
+	 			<div class="row">
+					<div class="col-md-3">
+					<label for="dataentrega"> Data entrega * </label>
+						<input type="date" name="dataentrega" class="form-control"  id="dataentrega"> <br> <br> 
+					</div>
+				</div>
+	 			<div class="row">
+					<div class="col-md-12">
+					<label for="necessidivulgacao"> Se o trabalho necessitar de divulgação como e onde será feito? * </label>
+						<textarea class="form-control" name="necessidivulgacao" id="necessidivulgacao" rows="3"  ></textarea> <br> <br> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+					<label for="necessidivulgacao"> ATENÇÃO: Todos campos identificados com * deverão ser preenchidos. </label><br> <br> 
+					</div>
+				</div>	
+		</div>
+	</div>
+
+
+</form>
+</div>
+</body>
+</html>
