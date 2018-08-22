@@ -5,8 +5,8 @@ Desenvolvimento do Processo de Solicitação de Programação Visual, toda gest�
 
 # Composição do formulário
 
-  Informações ocultas, sobre o responsável pelo preenchimento.
+  Informações ocultas, sobre o responsável pelo preenchimento. <br>
 	Responsável pelo preenchimento, Usuário e Data do preenchimento.
 					
-  Informações visíveis.
+  Informações visíveis.  <br>
         Trabalho, Necessidades de divulgação, Descrição, Solicitante, Centro de custo, Materiais, Precisará de revisão, Público alvo, Data entrega e Se o trabalho necessitar de divulgação como e onde será feito?.
